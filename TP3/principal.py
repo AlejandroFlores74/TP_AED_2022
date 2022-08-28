@@ -75,7 +75,7 @@ def actualizar_proyecto(vec, indice, lineas, fecha):
 
 
 def calcular_cantidad_lineas(vec):
-    v = [] * 11
+    v = [0] * 11
     for i in vec:
         v[i.lenguaje] += 1
     return v
