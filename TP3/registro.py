@@ -12,12 +12,12 @@ class Proyecto:
         self.cant_lineas = cant_lineas
 
     def __str__(self):
-        res = "Número: " + str(self.numero)
-        res += "- Fecha: " + self.fecha
-        res += "- Titulo: " + self.titulo
-        res += "- Lenguaje: " + convertir_titulo(self.lenguaje)
-        res += "- Cantidad de lineas: " + str(self.cant_lineas)
-        return res
+        cadena = 'numero: {:<10} fecha: {:<20} titulo: {:<10} Lenguaje: {:<10} cantidad de lineas {:<10}'
+        return cadena.format(self.numero,
+                             str(self.fecha),
+                             self.titulo,
+                             convertir_titulo(self.lenguaje),
+                             self.cant_lineas)
 
 
 # proyecto = Proyecto(1, "12-06-2008", "ArtPac", 4, 120)
