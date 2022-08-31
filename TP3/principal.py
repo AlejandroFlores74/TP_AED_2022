@@ -29,7 +29,7 @@ def mostrar_menu():
 def cargar_proyectos(vec, n):
     for i in range(n):
         # el numero debe aparecer UNA SOLA vez
-        numero = random.randrange(1000000, 9999999)
+        numero = 500 + i
         fecha = "20-02-2011"
         titulo = random.choice(["AR", "BR", "CH", "PR", "PE", "CO", "UR"])
         lenguaje = random.randint(0, 10)
@@ -75,7 +75,7 @@ def actualizar_proyecto(vec, indice, lineas, fecha):
 
 
 def calcular_cantidad_lineas(vec):
-    v = [] * 11
+    v = [0] * 11
     for i in vec:
         v[i.lenguaje] += 1
     return v
@@ -83,7 +83,7 @@ def calcular_cantidad_lineas(vec):
 
 def mostrar_cant_lineas(v_acum_lineas):
     for i in range(len(v_acum_lineas)):
-        print("El lenguaje", convertir_titulo(i), " acumula ", v_acum_lineas[i], "lineas.")
+        print('El lenguaje', convertir_titulo(i), ' acumula ', v_acum_lineas[i], 'lineas.')
 
 
 def ordenar_x_numero(vec):
@@ -119,9 +119,9 @@ def principal():
                     x = int(input('ACTUALIZAR: Ingrese el numero del proyecto:'))
                     indice = busqueda_secuencial(vec, x)
                     if indice is not None:
-                        print("Proyecto encontrado!!!")
-                        lineas = input("Cantidad de lineas: ")
-                        fecha = input("Fecha de actualizacion: ")
+                        print('Proyecto encontrado!!!')
+                        lineas = input('Cantidad de lineas: ')
+                        fecha = input('Fecha de actualizacion: ')
                         actualizar_proyecto(vec, indice, lineas, fecha)
                     else:
                         print('El numero de proyecto no se encuentra')
@@ -132,14 +132,14 @@ def principal():
                     pass
                 elif op == 6:
                     for i in range(11):
-                        print(i, ":", convertir_titulo(i))
-                    ln = int(input("Que lenguaje desea filtrar? "))
+                        print(i, ':', convertir_titulo(i))
+                    ln = int(input('Que lenguaje desea filtrar? '))
                     ordenar_x_numero(vec)
                     mostrar_x_lenguaje(vec, ln)
                 elif op == 7:
                     pass
             else:
-                print("Primero deber cargar los proyectos")
+                print('Primero deber cargar los proyectos')
         mostrar_menu()
         op = int(input('\ningrese una opcion (Con cero sale):'))
 
